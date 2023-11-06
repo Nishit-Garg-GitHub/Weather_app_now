@@ -115,9 +115,7 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
                   padding: EdgeInsets.all(3),
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () {
-                      // Handle the "More Details" button click
-                    },
+                    onPressed: () {},
                     child: Text(
                       'More Details>',
                       style: TextStyle(fontSize: 15.0, color: Colors.blue),
@@ -258,9 +256,7 @@ class ManageCitiesPage extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.menu),
-            onPressed: () {
-              // Handle the '+' button click here (e.g., navigate to a new city screen).
-            },
+            onPressed: () {},
           ),
         ],
       ),
@@ -287,10 +283,7 @@ class ManageCitiesPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   child: ElevatedButton(
-                    onPressed: () {
-                      // Navigate back to the Weather home page
-                      Navigator.pop(context);
-                    },
+                    onPressed: () {Navigator.pop(context);},
                     style: ElevatedButton.styleFrom(
                       primary: Colors.transparent,
                       elevation: 0,
@@ -349,9 +342,7 @@ class ManageCitiesPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   child: ElevatedButton(
-                    onPressed: () {
-                      // Handle button click for the second city
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       primary: Colors.transparent,
                       elevation: 0,
@@ -623,6 +614,5 @@ class FiveDayForecastPage extends StatelessWidget {
     );
   }
 }
-
 
 
