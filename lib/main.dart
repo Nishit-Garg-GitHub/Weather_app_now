@@ -22,7 +22,7 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
   Map<String, dynamic> weatherData = {};
   bool isLoading = false;
 
-  // Method to fetch weather data
+
   Future<void> fetchWeatherData(String city) async {
     try {
       setState(() {
@@ -33,7 +33,6 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
         isLoading = false;
       });
     } catch (e) {
-      // Handle errors, e.g., display an error message to the user
       print('Error: $e');
       setState(() {
         isLoading = false;
@@ -43,7 +42,6 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
 
   @override
   void initState() {
-    // Fetch weather data for Vidyavihar when the page is loaded
     fetchWeatherData('Pilani');
     super.initState();
   }
@@ -51,13 +49,10 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
-      // Display a loading indicator while data is being fetched
       return Scaffold(body: Center(child: CircularProgressIndicator()));
     } else if (weatherData == null) {
-      // Handle the case where data is not available or there was an error
       return Scaffold(body: Center(child: Text('Failed to load weather data')));
     } else {
-      // Parse the data and update your UI accordingly
       final temperature = (weatherData['main']['temp']) - 273.15;
       final weatherCondition = weatherData['weather'][0]['description'];
       final capitalizedWeatherCondition =
@@ -83,7 +78,6 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
             IconButton(
               icon: const Icon(Icons.menu),
               onPressed: () {
-                // Implement menu functionality here
               },
             ),
           ],
@@ -107,11 +101,11 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
                   style: TextStyle(fontSize: 35.0, color: Colors.black),
                 ),
                 Text(
-                  '${temperature.toStringAsFixed(0)}°C', // Display temperature
+                  '${temperature.toStringAsFixed(0)}°C', 
                   style: TextStyle(fontSize: 65.0, color: Colors.black),
                 ),
                 Text(
-                  capitalizedWeatherCondition, // Display weather condition
+                  capitalizedWeatherCondition, 
                   style: TextStyle(fontSize: 20.0, color: Colors.black),
                 ),
                 Text('🥽 AQI 165',
@@ -445,8 +439,6 @@ class FiveDayForecastPage extends StatelessWidget {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-
-          // First Column
           Column(
             children: [
               SizedBox(height: 50),
@@ -483,7 +475,6 @@ class FiveDayForecastPage extends StatelessWidget {
             ],
           ),
 
-          // Second Column
           Column(
             children: [
               SizedBox(height: 50),
@@ -520,7 +511,6 @@ class FiveDayForecastPage extends StatelessWidget {
             ],
           ),
 
-          // Third Column
           Column(
             children: [
               SizedBox(height: 50),
@@ -557,7 +547,6 @@ class FiveDayForecastPage extends StatelessWidget {
             ],
           ),
 
-          // Fourth Column
           Column(
             children: [
               SizedBox(height: 50),
@@ -594,7 +583,6 @@ class FiveDayForecastPage extends StatelessWidget {
             ],
           ),
 
-          // Fifth Column
           Column(
             children: [
               SizedBox(height: 50),
